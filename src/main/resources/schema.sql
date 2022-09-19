@@ -3,6 +3,7 @@ CREATE TABLE PERSON
 (
     id            UUID,
     name          VARCHAR(2000) NOT NULL,
+    email         VARCHAR(2000) NOT NULL,
     password_hash VARCHAR(2000) NOT NULL,
     is_admin      BOOLEAN       NOT NULL DEFAULT FALSE,
 
