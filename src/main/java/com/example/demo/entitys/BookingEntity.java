@@ -48,6 +48,9 @@ public class BookingEntity implements Serializable {
     @Column(name = "approved", nullable = false)
     private boolean approved;
 
+    @Column(name = "workspace", nullable = true)
+    private String workspace;
+
     @ManyToOne
     @JoinColumn(name = "fk_person", nullable = false)
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
@@ -69,6 +72,14 @@ public class BookingEntity implements Serializable {
     @Override
     public int hashCode() {
         return getClass().hashCode();
+    }
+
+    public void setWorkspace(String workspace) {
+        this.workspace = workspace;
+    }
+
+    public String getWorkspace() {
+        return workspace;
     }
 
     public void setCheckin(Date checkin) {

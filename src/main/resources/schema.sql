@@ -6,6 +6,7 @@ CREATE TABLE PERSON
     email         VARCHAR(2000) NOT NULL,
     password_hash VARCHAR(2000) NOT NULL,
     is_admin      BOOLEAN       NOT NULL DEFAULT FALSE,
+    workspace     VARCHAT(2000)
 
     PRIMARY KEY (id)
 );
