@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public interface PersonRepo extends CrudRepository<PersonEntity, UUID> {
 
-    Optional<PersonEntity> findByUsername(String username);
+    Optional<PersonEntity> findByName(String name);
 
     List<PersonEntity> findAll();
 

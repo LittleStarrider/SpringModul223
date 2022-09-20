@@ -57,11 +57,11 @@ public class PersonService {
     }
 
     @Transactional
-    public PersonEntity delete(PersonEntity deletePerson) {
-        val personEntity = personRepo.findById(deletePerson.getId());
+    public void delete(UUID deletePersonId) {
+        val personEntity = personRepo.findById(deletePersonId);
         if (personEntity.isPresent()) {
             log.info("Executing delete user ...");
-            return personRepo.save(deletePerson);
+            personRepo.deleteById(deletePersonId);
         } else {
             throw new NotFoundException("User not found");
         }

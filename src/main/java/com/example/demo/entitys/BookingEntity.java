@@ -71,4 +71,55 @@ public class BookingEntity implements Serializable {
         return getClass().hashCode();
     }
 
+    public void setCheckin(Date checkin) {
+        this.checkin = checkin;
+    }
+
+    public void setCheckout(Date checkout) {
+        this.checkout = checkout;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public void setApproved(boolean approved) {
+        this.approved = approved;
+    }
+
+    public void setPerson(PersonEntity person) {
+        this.person = person;
+    }
+
+    public void setPersonid(UUID personid) {
+        this.personid = personid;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public Date getCheckin() {
+        return checkin;
+    }
+
+    public Date getCheckout() {
+        return checkout;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public boolean isApproved() {
+        return approved;
+    }
+
+    public PersonEntity getPerson() {
+        return person;
+    }
+
+    public UUID getPersonid() {
+        return personid;
+    }
 }
