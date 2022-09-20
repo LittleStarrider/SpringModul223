@@ -15,8 +15,8 @@ DROP TABLE IF EXISTS BOOKING CASCADE;
 CREATE TABLE BOOKING
 (
     id       UUID,
-    checkin  DATE,
-    checkout DATE,
+    checkin  DATETIME,
+    checkout DATETIME,
     amount   int,
     approved BOOL,
     fk_person UUID,
