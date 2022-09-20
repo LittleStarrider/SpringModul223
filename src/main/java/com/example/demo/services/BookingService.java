@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -27,8 +28,12 @@ public class BookingService {
         return bookingRepo.findAll();
     }
 
-    public List<BookingEntity> getAllByUserId(PersonEntity personEntity) {
-        return bookingRepo.findAllByPerson(personEntity);
+    public List<BookingEntity> getAllByUserId(UUID id) {
+        return bookingRepo.findAllById(id);
+    }
+
+    public Optional<BookingEntity> getById(UUID id) {
+        return bookingRepo.findById(id);
     }
 
     public List<BookingEntity> getAllByApproved(boolean approved) {

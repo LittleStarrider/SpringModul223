@@ -13,6 +13,8 @@ public interface BookingRepo extends CrudRepository<BookingEntity, UUID> {
 
     List<BookingEntity> findAllByPerson(PersonEntity personEntity);
 
+    List<BookingEntity> findAllById(UUID id);
+
     List<BookingEntity> findByApproved(boolean approved);
 
 }
