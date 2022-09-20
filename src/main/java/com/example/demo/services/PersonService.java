@@ -34,6 +34,10 @@ public class PersonService {
         return personRepo.findById(id);
     }
 
+    public Optional<PersonEntity> getByName(String name) {
+        return personRepo.findByName(name);
+    }
+
     @Transactional
     public PersonEntity create(PersonEntity newPerson) {
         val personEntity = personRepo.findById(newPerson.getId());

@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -74,11 +75,9 @@ public class MemberController {
             description = "Delete a booking request for a user"
             //security = {@SecurityRequirement(name = "JWT Auth")}
     )
-    @PutMapping("/edit/{id}")
+    @DeleteMapping ("/edit/{id}")
     void delete(@PathVariable UUID id) {
         val bookigEntity = bookingService.getById(id);
         bookingService.delete(id);
     }
-
-
 }
